@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Listings" Relationship="Self.FK__Listings__Catego__4BAC3F29" FromRole="Categories" ToRole="Listings" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Listings" Relationship="Self.FK__Listings__CityID__49C3F6B7" FromRole="Cities" ToRole="Listings" />
+  </EntityType>
+  <EntityType Name="Listings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ListingDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ListingCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ListingPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PublicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ListingTypeID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK__Listings__Catego__4BAC3F29" FromRole="Listings" ToRole="Categories" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__Listings__CityID__49C3F6B7" FromRole="Listings" ToRole="Cities" />
+    <NavigationProperty Name="ListingTypes" Relationship="Self.FK__Listings__Listin__4CA06362" FromRole="Listings" ToRole="ListingTypes" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Listings__UserID__4AB81AF0" FromRole="Listings" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ListingTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Listings" Relationship="Self.FK__Listings__Listin__4CA06362" FromRole="ListingTypes" ToRole="Listings" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Listings" Relationship="Self.FK__Listings__UserID__4AB81AF0" FromRole="Users" ToRole="Listings" />
+  </EntityType>
+  <Association Name="FK__Listings__Catego__4BAC3F29">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="Listings" Type="Self.Listings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Listings">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listings__CityID__49C3F6B7">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="Listings" Type="Self.Listings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Listings">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listings__Listin__4CA06362">
+    <End Role="ListingTypes" Type="Self.ListingTypes" Multiplicity="1" />
+    <End Role="Listings" Type="Self.Listings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListingTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Listings">
+        <PropertyRef Name="ListingTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listings__UserID__4AB81AF0">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Listings" Type="Self.Listings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Listings">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" />
+    <EntitySet Name="Listings" EntityType="Self.Listings" />
+    <EntitySet Name="ListingTypes" EntityType="Self.ListingTypes" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Listings__Catego__4BAC3F29" Association="Self.FK__Listings__Catego__4BAC3F29">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Listings" EntitySet="Listings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listings__CityID__49C3F6B7" Association="Self.FK__Listings__CityID__49C3F6B7">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Listings" EntitySet="Listings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listings__Listin__4CA06362" Association="Self.FK__Listings__Listin__4CA06362">
+      <End Role="ListingTypes" EntitySet="ListingTypes" />
+      <End Role="Listings" EntitySet="Listings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listings__UserID__4AB81AF0" Association="Self.FK__Listings__UserID__4AB81AF0">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Listings" EntitySet="Listings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
