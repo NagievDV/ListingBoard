@@ -1,0 +1,63 @@
+﻿<Page x:Class="ListingBoard.Pages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ListingBoard.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Личный кабинет">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="38"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" Name="lvListingsList" MouseDoubleClick="lvListingsList_MouseDoubleClick" MinHeight="300" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=2}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                         
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Center" Width="300" Grid.Row="0" Content="{Binding ListingName}" HorizontalAlignment="Center" FontWeight="Bold" Height="Auto" Background="Transparent"/>
+                            <Label Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Content="{Binding PublicationDate}" FontSize="10" Height="Auto"/>
+                        </StackPanel>
+
+
+                        <Image Width="300" Grid.Row="1" Stretch="Fill" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image.Source>
+                                <Binding Path="ListingPhoto">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>E:\Задания\Аксёнова\ListingBoard\ListingBoard\Resources\Images\default.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel Orientation="Vertical" Grid.Row="2">
+                            <Label Width="300" Grid.Row="2" Content="{Binding ListingPrice}" HorizontalAlignment="Right" Height="Auto" FontWeight="Bold" Background="Transparent"/>
+                            <TextBlock Width="300" Grid.Row="2" Text="{Binding ListingDescription}" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="10" Background="Transparent"/>
+
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="btnAddListing" Grid.Row="1" Content="Создать" Click="btnAddListing_Click" Width="100" Margin="0,0,10,0"/>
+            <Button x:Name="btnDeleteListing" Grid.Row="1" Content="Удалить" Click="btnDeleteListing_Click" Width="100" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

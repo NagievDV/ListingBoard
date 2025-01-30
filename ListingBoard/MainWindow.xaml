@@ -12,9 +12,17 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnBack" Grid.Row="0" Click="btnBack_Click" Content="Назад" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="imgLogo" Source="/Resources/icon.png" Height="38" HorizontalAlignment="Left" Width="38"/>
 
-        <Frame x:Name="frMainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="Pages/ListingsPage.xaml"/>
+        <Button x:Name="btnBack" Grid.Row="0" Click="btnBack_Click" Content="Назад" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+
+        <Frame x:Name="frMainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="Pages/ListingsPage.xaml" Navigated="frMainFrame_Navigated" />
+
+        <Button x:Name="btnLogin" Grid.Row="0" Click="btnLogin_Click" Content="Авторизация" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,0,0,0"/>
+
+        <Button x:Name="btnMainPage" Grid.Row="0" Click="btnMainPage_Click" Content="Главная" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,0,0,0"/>
+
+        <Button x:Name="btnUserPage" Grid.Row="0" Click="btnUserPage_Click" Visibility="Hidden" Content="Личный кабинет" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="410,0,0,0"/>
 
     </Grid>
 </Window>

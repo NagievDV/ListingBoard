@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\App.xaml
-31988575635
+6865432152
 2-1957146511
-15-397414569
+18656468806
 18-2055583253
-MainWindow.xaml;Pages\ListingsPage.xaml;ResourceDictionary.xaml;
+MainWindow.xaml;Pages\ListingEditPage.xaml;Pages\ListingsPage.xaml;Pages\LoginPage.xaml;Pages\UserPage.xaml;ResourceDictionary.xaml;
 
 False
 

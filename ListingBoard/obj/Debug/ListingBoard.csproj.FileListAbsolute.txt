@@ -24,3 +24,9 @@ E:\Задания\Аксёнова\ListingBoard\ListingBoard\bin\Debug\EntityFra
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\bin\Debug\ru\EntityFramework.resources.dll
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\ListingBoard_Content.g.cs
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\ListingB.E713803A.Up2Date
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\LoginPage.g.cs
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\UserPage.g.cs
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\LoginPage.baml
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\UserPage.baml
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\ListingEditPage.g.cs
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\ListingEditPage.baml
