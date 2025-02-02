@@ -30,3 +30,5 @@ E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\Log
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\UserPage.baml
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\ListingEditPage.g.cs
 E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\ListingEditPage.baml
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\CompletedListingsPage.g.cs
+E:\Задания\Аксёнова\ListingBoard\ListingBoard\obj\Debug\Pages\CompletedListingsPage.baml

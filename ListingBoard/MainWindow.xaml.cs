@@ -43,5 +43,10 @@ namespace ListingBoard
         {
             frMainFrame.NavigationService.Navigate(new UserPage());
         }
+
+        private void btnCompletedListings_Click(object sender, RoutedEventArgs e)
+        {
+            frMainFrame.NavigationService.Navigate(new CompletedListingsPage());
+        }
     }
 }

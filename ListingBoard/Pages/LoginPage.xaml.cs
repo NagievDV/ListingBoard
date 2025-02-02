@@ -47,6 +47,7 @@ namespace ListingBoard.Pages
                     {
                         mainWindow.userdata = user;
                         mainWindow.btnUserPage.Visibility = Visibility.Visible;
+                        mainWindow.btnCompletedListings.Visibility = Visibility.Visible;
                     }
                     NavigationService?.Navigate(new UserPage());
                 }
